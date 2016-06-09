@@ -1,6 +1,6 @@
 {
   "name": "sainsmart-16-hid",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Control the Sainsmart 16-relay USB device from node.",
   "main": "index.js",
   "scripts": {

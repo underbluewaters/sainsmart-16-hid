@@ -64,6 +64,7 @@ class Relay {
     // checksum gets appended based on message contents
     updateChecksum(message);
     this.device.write(toByteArray(message));
+    let self = this;
     this.device.read(function(err, buffer) {
       if (err) {
         callback(err);
@@ -74,7 +75,7 @@ class Relay {
           bits = (((mask & state) === 0) ? "0" : "1") + bits;
         }
         var status = parseInt(bits, 2);
-        this._setState(status);
+        self._setState(status);
         callback(null, status);
       }
     });
