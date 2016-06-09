@@ -65,7 +65,9 @@ relay.stateArray // relays 0, 4, and 15 are enabled
 Sends a read command to the USB device. `callback(err, data)` (required) will
 include any error and data will be the 16-bit integer representation of the
 state of the relays. `relay.state` and `relay.stateArray` will be updated when
-this function completes.
+this function completes. _Note that you shouldn't need this function_. Each time
+`write` or `set` is called this information can be accessed from `relay.state`
+or `relay.stateArray`.
 
 ### relay.write(state)
 
